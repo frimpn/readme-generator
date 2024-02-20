@@ -73,6 +73,13 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
+  inquirer.prompt(questions) 
+  .then((answers)=>{
+  const file = generateMarkdown(answers)
+  writeToFile(`README ${answers.title}.md`, file)
+  })
+
+
 
 }
 
